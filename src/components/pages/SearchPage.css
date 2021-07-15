@@ -1,0 +1,31 @@
+h1{
+    font-family: 'Kaushan Script', cursive;
+    color:#FAFAFA;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    font-family: 'Kaushan Script',cursive;
+    color: #FAFAFA;
+    text-align: center;
+}
+
+.search-bar {
+    width: 300px;
+    height: 32px;
+    margin: 32px 24px 0px 0px;
+}
+
+.search-btn {
+    margin-bottom: 4px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.alert {
+    width: 440px;
+}
