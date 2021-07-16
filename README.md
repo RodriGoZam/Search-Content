@@ -1,11 +1,17 @@
-# Getting Started with Create React App
+# iTunes Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Web apliaction that lets you search for songs and play a preview of the song using the iTunes API
 
-## Available Scripts
 
-In the project directory, you can run:
+### About
+The app was built with using React.js and Bootstrap and aditionally using external packages like
+- Howler (audio library)
+- Axios
+- React icons
+- React Testing Library and Renderer
 
+
+## Setup
 ### `npm start`
 
 Runs the app in the development mode.\
