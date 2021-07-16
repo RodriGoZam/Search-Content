@@ -1,0 +1,55 @@
+.card-container {
+    width: 240px;
+    height: 440px;
+    background-color: #201E1E;
+    margin-bottom: 32px;
+}
+
+.img-container img{
+    width: 100%;
+    height: 300px;
+}
+
+.img-container {
+    position: relative;
+}
+
+.card-title {
+    text-align: left;
+    color: #FAFAFA;
+    margin: 5% 5% 2% 5%;
+    max-height: 48px;
+    overflow: hidden;
+    font-weight: 800;
+}
+
+.card-artist{
+    text-align: left;
+    color: #fafafaa8;
+    overflow: hidden;
+    height: 24px;
+    margin-left: 5%;
+}
+
+.card-album{
+    text-align: left;
+    color: #fafafaa8;
+    overflow: hidden;
+    height: 24px;
+    margin-left: 5%;
+}
+
+.card-price{
+    text-align: left;
+    color: #fafafaa8;
+    margin-left: 5%;
+}
+
+.play-btn{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
