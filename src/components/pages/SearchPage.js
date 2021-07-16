@@ -50,13 +50,7 @@ function SearchPage () {
                     <Row>
                         { result.filter(data => data.kind === 'song').map((data) => (
                             <Col>
-                                <InfoCard
-                                    imgurl= {data.artworkUrl100}
-                                    title = {data.trackName}
-                                    artist = {data.artistName}
-                                    album = {data.collectionName}
-                                    price = {data.trackPrice}
-                                />
+                                <InfoCard data={data}/>
                             </Col>
                         ))}
                     </Row>

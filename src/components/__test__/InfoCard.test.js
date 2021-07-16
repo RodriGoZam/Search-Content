@@ -1,0 +1,1 @@
+import InfoCard from "../InfoCard";
