@@ -21,11 +21,15 @@ p {
     margin-bottom: 4px;
 }
 
-.container {
+.container-alert {
     display: flex;
     justify-content: center;
 }
 
 .alert {
     width: 440px;
+}
+
+.result-container{
+    width: 1440px;
 }

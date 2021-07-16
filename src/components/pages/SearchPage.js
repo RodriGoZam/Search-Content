@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './SearchPage.css'
-import {Button, Alert} from 'react-bootstrap'
+import {Button, Alert, Container, Row, Col} from 'react-bootstrap'
+import InfoCard from '../InfoCard'
 
 function SearchPage () {
 
@@ -8,7 +9,7 @@ function SearchPage () {
     const [error, setError] = useState(false)
 
     const printSearch = () => {
-        if(input == "")
+        if(input === "")
         {
             setError(true);
         } else {
@@ -26,11 +27,27 @@ function SearchPage () {
                     <input className='search-bar' onChange={e => setInput(e.target.value)} type='text' required placeholder='Search...'></input>
                     <Button onClick={printSearch} className='search-btn'>Search</Button>
                 </div>
-                <div className='container'>
+                <div className='container-alert'>
                     <div className='alert'>
                         <Alert className='alert' show={error} variant="primary">Search can't be blank</Alert>
                     </div>
                 </div>
+                <Container className='result-container'>
+                    <Row>
+                        <Col>
+                            <InfoCard
+                                imgurl='https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg'
+                                title = 'Star Wars: The Skywalker'
+                                artist = 'Artist Name'
+                                album = 'Album Name'
+                                price = '14.99'
+                            />
+                        </Col>
+                    </Row>
+                </Container>
+
+                
+                
             </div>
         </>
     )
