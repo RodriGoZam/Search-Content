@@ -14,18 +14,24 @@
     text-align: left;
     color: #FAFAFA;
     margin: 5% 5% 2% 5%;
+    max-height: 48px;
+    overflow: hidden;
     font-weight: 800;
 }
 
 .card-artist{
     text-align: left;
     color: #fafafaa8;
+    overflow: hidden;
+    height: 24px;
     margin-left: 5%;
 }
 
 .card-album{
     text-align: left;
     color: #fafafaa8;
+    overflow: hidden;
+    height: 24px;
     margin-left: 5%;
 }
 

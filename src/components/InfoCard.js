@@ -16,7 +16,7 @@ function InfoCard ({imgurl,title,artist,album,price}) {
                 Album: {album}
             </div>
             <div className='card-price'>
-                {price}$
+                Price: {price}$
             </div>
         </div>
     ) 

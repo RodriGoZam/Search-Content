@@ -2,20 +2,34 @@ import React, { useState } from 'react'
 import './SearchPage.css'
 import {Button, Alert, Container, Row, Col} from 'react-bootstrap'
 import InfoCard from '../InfoCard'
+import config from '../../config.json'
+import axios from 'axios'
 
 function SearchPage () {
 
     const [input, setInput] = useState('')
     const [error, setError] = useState(false)
+    const [result, setResult] = useState([])
 
-    const printSearch = () => {
+    const startSearch = () => {
         if(input === "")
         {
             setError(true);
         } else {
             setError(false);
-            console.log(input);
+            var searchTerm = input.replace(/\s+/g, '+').toLowerCase();
+            iTunesAPIRequest(searchTerm)
         }
+    }
+
+    //Makes an http request to itunes API and saves results to array
+    const iTunesAPIRequest = (searchTerm) => {
+        axios.get(config.iTunesURL+'search?term='+searchTerm+'&limit=50')
+            .then(res => {
+                setResult(res.data.results)
+            }).catch(err =>{
+                console.log(err)
+            })
     }
 
     return (
@@ -25,7 +39,7 @@ function SearchPage () {
                 <p className='desc'>Search for your favorite music</p>
                 <div>
                     <input className='search-bar' onChange={e => setInput(e.target.value)} type='text' required placeholder='Search...'></input>
-                    <Button onClick={printSearch} className='search-btn'>Search</Button>
+                    <Button onClick={startSearch} className='search-btn'>Search</Button>
                 </div>
                 <div className='container-alert'>
                     <div className='alert'>
@@ -34,15 +48,17 @@ function SearchPage () {
                 </div>
                 <Container className='result-container'>
                     <Row>
-                        <Col>
-                            <InfoCard
-                                imgurl='https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg'
-                                title = 'Star Wars: The Skywalker'
-                                artist = 'Artist Name'
-                                album = 'Album Name'
-                                price = '14.99'
-                            />
-                        </Col>
+                        { result.filter(data => data.kind === 'song').map((data) => (
+                            <Col>
+                                <InfoCard
+                                    imgurl= {data.artworkUrl100}
+                                    title = {data.trackName}
+                                    artist = {data.artistName}
+                                    album = {data.collectionName}
+                                    price = {data.trackPrice}
+                                />
+                            </Col>
+                        ))}
                     </Row>
                 </Container>
 
