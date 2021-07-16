@@ -38,7 +38,7 @@ function SearchPage () {
                 <h1>iTunes Music Search</h1>
                 <p className='desc'>Search for your favorite music</p>
                 <div>
-                    <input className='search-bar' onChange={e => setInput(e.target.value)} type='text' required placeholder='Search...'></input>
+                    <input className='search-bar' onChange={e => setInput(e.target.value)} data-testid='search-input' type='text' required placeholder='Search...'></input>
                     <Button onClick={startSearch} className='search-btn'>Search</Button>
                 </div>
                 <div className='container-alert'>
@@ -50,13 +50,7 @@ function SearchPage () {
                     <Row>
                         { result.filter(data => data.kind === 'song').map((data) => (
                             <Col>
-                                <InfoCard
-                                    imgurl= {data.artworkUrl100}
-                                    title = {data.trackName}
-                                    artist = {data.artistName}
-                                    album = {data.collectionName}
-                                    price = {data.trackPrice}
-                                />
+                                <InfoCard data={data}/>
                             </Col>
                         ))}
                     </Row>
