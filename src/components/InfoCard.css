@@ -10,6 +10,10 @@
     height: 300px;
 }
 
+.img-container {
+    position: relative;
+}
+
 .card-title {
     text-align: left;
     color: #FAFAFA;
@@ -39,4 +43,13 @@
     text-align: left;
     color: #fafafaa8;
     margin-left: 5%;
+}
+
+.play-btn{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
 }
