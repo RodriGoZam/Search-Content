@@ -24,7 +24,7 @@ function SearchPage () {
 
     //Makes an http request to itunes API and saves results to array
     const iTunesAPIRequest = (searchTerm) => {
-        axios.get(config.iTunesURL+'search?term='+searchTerm+'&limit=50')
+        axios.get(config.iTunesURL+'search?term='+searchTerm+'&limit=45')
             .then(res => {
                 setResult(res.data.results)
             }).catch(err =>{
